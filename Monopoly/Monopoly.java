@@ -5,6 +5,7 @@ Java Program
 
 This is a program that plays a monopoly game in the terminal from 2-6 players
  */
+
 import java.util.*;
 public class Monopoly {
 
@@ -27,6 +28,7 @@ public class Monopoly {
         } 
     }
         */
+
     //################################################ MAIN #########################################
     public static void main(String args[]){
 
@@ -39,6 +41,7 @@ public class Monopoly {
 
 
         
+
         Scanner scanner=new Scanner(System.in);
         Integer Roll; 
         Integer CTILE=Board.GO();
@@ -49,6 +52,7 @@ public class Monopoly {
         boolean Juego2=true;
         //boolean Juego3=true;
         //boolean Juego4=true;
+      
         boolean Player1NOTBankrupt=true;
         boolean Player2NOTBankrupt=true;
         //boolean Player3NOTBankrupt=true;
@@ -62,6 +66,7 @@ public class Monopoly {
         Player Player2 = new Player("Player2",CTILE);
         //Player Player3 = new Player();
         //Player Player4 = new Player();
+
 
         //set player start tile
         Player1.SetTILE(CTILE); 
@@ -122,6 +127,7 @@ public class Monopoly {
             //Juego=false;
         }
         Juego2=true;
+
         /* 
         while(Player3NOTBankrupt){
             
@@ -130,8 +136,10 @@ public class Monopoly {
             
         }
         */
+
     }
         scanner.close();
+
         
     }        
 }

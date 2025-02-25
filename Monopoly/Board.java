@@ -7,36 +7,20 @@ public class Board extends Monopoly{
     /*
      * METHOD to edit Tile Array in TILE method to desired tile on board
      */
-    static ArrayList<String> Tile=new ArrayList<>(100);
+
+ 
 
     public static ArrayList<String> BOARD(int position){
-                                 
-                    /* 
-                    Tile.set(27," ");
-                    Tile.set(28," ");
-                    Tile.set(29," ");
-                    Tile.set(30," ");
-                    Tile.set(31," ");
-                    Tile.set(32," ");
-
-                    Tile.set(46," ");
-                    Tile.set(47," ");
-                    Tile.set(48," ");
-                    Tile.set(49," ");
-                    Tile.set(50," ");
-                    Tile.set(51," ");
-                    Tile.set(52," ");
-                    Tile.set(53," ");
-
-                    Tile.set(68," ");
-                    Tile.set(69," ");
-                    Tile.set(70," ");
-                    Tile.set(71," ");
-                    */
         System.out.println();
+        ArrayList<String> Tile=new ArrayList<>(100);
+        //String Tile=new String(" ");
+        //ArrayList<String> corner = new ArrayList<>();
+       //ArrayList<String> rectangle = new ArrayList<>(101); 
+
                 if (position==1){
-                //############################################ GO TILE
-                    System.out.print("DEBUGBOARDSIZE:"+Tile.size());          //CHANGE CONTROL
+                //ArrayList corner tile
+                    
+
                     if(Tile.size()==0){
                             for (int i=0;i<100;i++){
                                 Tile.add("#");
@@ -60,6 +44,7 @@ public class Board extends Monopoly{
                     Tile.set(30,"O");
                 return Tile;
                 }
+
                 //############################################ Visiting Jail
                 else if (position==11){
                 //Switch Case 11 Just Visiting Jail
@@ -96,6 +81,7 @@ public class Board extends Monopoly{
                     Tile.set(53,"G");
                         return Tile;
                 }
+
                 //############################################ FREE PARKING
                 else if (position==21){
                 //SwitchCase 21
@@ -107,6 +93,8 @@ public class Board extends Monopoly{
                             for (int i=0;i<100;i++){
                                 Tile.set(i,"#");
                         }
+                        Tile.set(i,"#");
+
                     }
                     for (int i=21;i<39;i++){
                         Tile.set(i," ");
@@ -131,6 +119,7 @@ public class Board extends Monopoly{
                     Tile.set(52,"G");
                     Tile.set(53,"!");
                         return Tile;
+
                 }
                     //############################################ GO TO JAIL
                 else if (position==31){
@@ -155,6 +144,7 @@ public class Board extends Monopoly{
                     for (int i=61;i<79;i++){
                         Tile.set(i," ");
                     }
+
                     Tile.set(28," ");
                     Tile.set(29,"G");
                     Tile.set(30,"O");
@@ -169,6 +159,7 @@ public class Board extends Monopoly{
                     Tile.set(52,"L");
                     Tile.set(53," ");
                         return Tile;
+
                 }
  //####################################### EDGE1 TILES ###################################################               
                 // ################################ CHANGE CONTROL CHANGE CONTROL CHANGE CONTROL 
@@ -1930,6 +1921,7 @@ public class Board extends Monopoly{
     public static Integer CONNECAVE(){
         return 10;
     }
+
     //EDGE 2 TILES
     public static Integer STCHARLES(){
         return 12;
@@ -2014,6 +2006,5 @@ public class Board extends Monopoly{
     public static Integer BOARDWLK(){
         return 40;
     }
-
 }
 

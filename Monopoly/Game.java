@@ -8,6 +8,7 @@ public class Game extends Monopoly{
     static Integer ROLL;
     static Integer NEXTILE;
     static Integer CURRENTILE;
+
     static ArrayList<String> TILE=new ArrayList<>(100);
 
     public static Integer Play(int Tile){
@@ -37,28 +38,34 @@ public class Game extends Monopoly{
                 CURRENTILE=Board.GO();
                 TILE=Board.Tile(CURRENTILE);
                 Print.PrintCorner(TILE);
+
                 ROLL=(Dice.Dice1()+Dice.Dice2());                      //############ CHANGE CONTROL
+
                 System.out.println("You rolled two dice for a: " + ROLL);
                 NEXTILE=CURRENTILE+ROLL;
                 CURRENTILE = NEXTILE;
                 System.out.println("YOU LANDED ON!");
                 TILE=Board.Tile(CURRENTILE);
+
                 System.out.println("DEBUG"+CURRENTILE);
                 Print.PrintCorner(TILE);
                 
                 //System.out.println("DEBUG"+CURRENTILE);
                 GAME=false;
+
             }
             //JUST VISITING TILE
             if (Tile==11){
                 CURRENTILE=Board.JustVisiting();
                 TILE=Board.Tile(CURRENTILE);
                 Print.PrintCorner(TILE);
+
                 ROLL=(Dice.Dice1()+Dice.Dice2());              
                 System.out.println("You rolled two dice for a: " + ROLL);
                 NEXTILE=CURRENTILE+ROLL;
                 CURRENTILE = NEXTILE;
                 System.out.println("YOU LANDED ON!:");
+
                 TILE=Board.Tile(CURRENTILE);
                 Print.PrintCorner(TILE);
 
@@ -70,11 +77,13 @@ public class Game extends Monopoly{
                 CURRENTILE=Board.FREEPARKING();
                 TILE=Board.Tile(CURRENTILE);
                 Print.PrintCorner(TILE);
+
                 ROLL=(Dice.Dice1()+Dice.Dice2());              
                 System.out.println("You rolled two dice for a: " + ROLL);
                 NEXTILE=CURRENTILE+ROLL;
                 CURRENTILE = NEXTILE;
                 System.out.println("YOU LANDED ON!:");
+
                 TILE=Board.Tile(CURRENTILE);
                 Print.PrintCorner(TILE);
 
@@ -117,7 +126,7 @@ public class Game extends Monopoly{
                 System.out.println("YOU LANDED ON!:");
                 TILE=Board.Tile(CURRENTILE);
                 Print.PrintCorner(TILE);
-
+              
                 System.out.println("DEBUG"+CURRENTILE);
                 GAME=false;
             }
@@ -629,6 +638,7 @@ public class Game extends Monopoly{
                     CURRENTILE=remain;
                 }
                 System.out.println("YOU LANDED ON!:");
+
                 TILE=Board.Tile(CURRENTILE);
                 Print.PrintCorner(TILE);
 
@@ -733,6 +743,7 @@ public class Game extends Monopoly{
                 CURRENTILE=remain;
                 GAME=false;
             }
+
             GAME=false;                                             //CHANGE CONTROL
         }
 
@@ -740,3 +751,4 @@ public class Game extends Monopoly{
         return CURRENTILE;
     }
 }
+

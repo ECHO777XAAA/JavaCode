@@ -56,8 +56,13 @@ public class DrawCircle {
      * @param diameter the diameter of the grid (width and height)
      */
     public static void printGrid(String[] grid, int diameter) {
+
         for (int i = 0; i < diameter; i++) {
             for (int j = 0; j < diameter; j++) {
+
+        for (int i = 0; i <= diameter; i++) {
+            for (int j = 0; j <= diameter; j++) {
+
                 System.out.print(grid[i * diameter + j]);
             }
             System.out.println();
@@ -117,9 +122,15 @@ public class DrawCircle {
         
         
         String[] FinArray = IntToStringArrayString(IntToString(arraylistCircle));
+
         drawCircle(FinArray,size,size,size,((size*2)+1));
         //printNewLine(arraylistCircle,size);
         printGrid(FinArray,((size*2)+1));
+
+        drawCircle(FinArray,size,size,size,((size*2)-1));
+        //printNewLine(arraylistCircle,size);
+        printGrid(FinArray,((size*2)-1));
+
 
         scanner.close();
 
