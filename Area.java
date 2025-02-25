@@ -27,4 +27,3 @@ class Area{
         scanner.close(); //closing the scanner
         
     }
-}

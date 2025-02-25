@@ -6,8 +6,6 @@ Java Program
 This is a program that plays a monopoly game in the terminal from 2-6 players
  */
 
-
-
 import java.util.*;
 public class Monopoly {
 
@@ -15,54 +13,22 @@ public class Monopoly {
     public static Integer TurnState(Player player,Integer pos){
         int STATE;
         STATE=Game.Play(pos);
-        TURN(STATE,player.getTILE());
         return STATE;
     }
+    /* 
+    public static void CONDITIONS(Player player, Integer pos){                  Conditions for each tile
+        if(pos==3||18||34){ //Community chest 
 
-    public static void TURN(int STATE,int playerposition){
-        Scanner scan=new Scanner(System.in);
-         
-        //System.out.println("Started ON GO");
-        Integer Input=STATE;                              //SCANNER DEBUG
-        
-        boolean loop=true;
-        
-        while(loop){
-            if (Input==1){
-                System.out.println("DEBUG:" + STATE);
-                if ((STATE == 1)||(STATE == 11)||(STATE == 21)||(STATE == 31)){
-                    ArrayList<String>  tempTile=Board.Tile(playerposition);                       //FIX LOGIC
-                        System.out.println("You Landed on:");
-                        System.out.println();
-                        Print.PrintCorner(tempTile);     
-                        loop=false;                   
-                    }
-                    else{
-                        ArrayList<String>  tempTile=Board.Tile(playerposition);
-                        System.out.println("You Landed on:");
-                        System.out.println();
-                        Print.PrintEDGE(tempTile);
-                        loop=false;
-                    }
-            } 
-            else if (Input==0){
-                System.out.println("Exit?: 1 or 0:");
-                Input=scan.nextInt();
-                if(Input==1){
-                    loop=false;
-                }
-                else{
-                    continue;
-                }
-            }
-            else{
-                loop=false;
-            }
         }
-        loop=false;
-        scan.close();
+        if(pos==8||23||37){ //CHANCE 
+
+        }
+        if(pos==39||5){ //LUX tax and Income tax
+
+        } 
     }
-    
+        */
+
     //################################################ MAIN #########################################
     public static void main(String args[]){
 
@@ -75,11 +41,18 @@ public class Monopoly {
 
 
         
-        Scanner scan=new Scanner(System.in);
-        Integer Roll=0; 
+
+        Scanner scanner=new Scanner(System.in);
+        Integer Roll; 
         Integer CTILE=Board.GO();
+        Integer NTILE=Board.GO();
         //Integer Player1STATE=CTILE;
-        boolean Juego=true;
+        boolean GO=true;
+        boolean Juego1=true;
+        boolean Juego2=true;
+        //boolean Juego3=true;
+        //boolean Juego4=true;
+      
         boolean Player1NOTBankrupt=true;
         boolean Player2NOTBankrupt=true;
         //boolean Player3NOTBankrupt=true;
@@ -93,40 +66,68 @@ public class Monopoly {
         Player Player2 = new Player("Player2",CTILE);
         //Player Player3 = new Player();
         //Player Player4 = new Player();
-        while(Juego&&Player1NOTBankrupt){
+
+
+        //set player start tile
+        Player1.SetTILE(CTILE); 
+        Player2.SetTILE(CTILE);
+
+//############################ TILE 5 CURRENT TILE TO WORK ON######################
+
+    while(GO){
+        //################################################################################################# PLAYER 1
+        while(Juego1&&Player1NOTBankrupt){                             
             CTILE=Player1.getTILE();
-            System.out.println("Roll Dice? 1(Yes) or 0(No) ");
-            if (scan.hasNextInt()) {
-                Roll = scan.nextInt();
-                scan.nextLine(); //Consume input
+            System.out.println("PLAYER 1 Roll Dice? 1(Yes) or 0(No) ");
+            Roll = scanner.nextInt();
+                //if (scanner.hasNextInt()) {
+                //Roll = scan.nextInt();                                    
+                //scanner.nextLine(); //Consume input
                 if (Roll == 1) {
-                    Integer NTILE=TurnState(Player1,CTILE);
-                    // DEBUG WHAT IS THE NEXT TILE System.out.println(NTILE);
+                    NTILE=TurnState(Player1,CTILE);
+                    System.out.println("DEBUG1:"+CTILE);         
+                    System.out.println("DEBUG2:"+NTILE);  // DEBUG WHAT IS THE NEXT TILE 
                     Player1.SetTILE(NTILE);
+                    Juego1=false;
 
                 } else if (Roll == 0) {
                     System.out.println("Thanks for playing:");
-                    Juego=false;
+                    Juego1=false;
                 }
-            } else {
+                     else {
                 System.out.println("Invalid input. Please enter 1 or 0.");
-                scan.next(); // Consume the invalid input
+                scanner.next(); // Consume the invalid input
             }
             //Juego=false;
         }
-        /* 
-        while(Player2NOTBankrupt){
-            System.out.println("Roll Dice? 1(Yes) or 0(No) ");
-            Integer Roll=scan.nextInt();
-            if(Roll==1){
-                TurnState(Player2, CTILE);
-            }else if(Roll==0){
+        Juego1=true;
+        //################################################################################################# PLAYER 2
+        while(Juego2&&Player2NOTBankrupt){
+            CTILE=Player2.getTILE();
+            System.out.println("PLAYER 2 Roll Dice? 1(Yes) or 0(No) ");
+            Roll = scanner.nextInt();
+                //if (scanner.hasNextInt()) {
+                //Roll = scan.nextInt();                                    
+                //scanner.nextLine(); //Consume input
+                if (Roll == 1) {
+                    NTILE=TurnState(Player2,CTILE);
+                    System.out.println("DEBUG1:"+CTILE);         
+                    System.out.println("DEBUG2:"+NTILE);  // DEBUG WHAT IS THE NEXT TILE 
+                    Player2.SetTILE(NTILE);
+                    Juego2=false;
 
+                } else if (Roll == 0) {
+                    System.out.println("Thanks for playing:");
+                    Juego2=false;
+                }
+                     else {
+                System.out.println("Invalid input. Please enter 1 or 0.");
+                scanner.next(); // Consume the invalid input
             }
-            Juego=false;
+            //Juego=false;
         }
-            */
-        //Juego=true;
+        Juego2=true;
+
         /* 
         while(Player3NOTBankrupt){
             
@@ -135,7 +136,10 @@ public class Monopoly {
             
         }
         */
-        scan.close();
+
+    }
+        scanner.close();
+
         
     }        
 }
