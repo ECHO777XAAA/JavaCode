@@ -3,7 +3,7 @@
   Database for the BrwnResluse Program
 */
 
-Package BrownRelu$3;
+package BrownRelu$3;
 
 public class Database extends BrownRecluse{
     
