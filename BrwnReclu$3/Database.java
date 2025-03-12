@@ -7,6 +7,6 @@ package BrownRelu$3;
 
 public class Database extends BrownRecluse{
     
-  Arraylist<String> DB1= new Arraylist<String>();
+  ArrayList<String> DB1= new ArrayList<String>();
   
 }
