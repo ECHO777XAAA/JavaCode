@@ -10,8 +10,12 @@
 Package BrwnReclu$3;
 
 public class PageID extends BrownRecluse{
+
+			public static String PageID(){
+						//identfies the code as HTML XML OR XHTML
+			}
 			
-			public static String Crawler(//INPUT HTML FILE){
+			public static String Crawler(){.   //take HTML FILE as .htmlfile
 				//this method takes an html file and outputs each word
 				//method counts the number of words in the file
 			}
