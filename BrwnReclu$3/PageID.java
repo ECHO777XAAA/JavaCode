@@ -29,7 +29,7 @@ public class PageID extends BrownRecluse{
 								String[] words = Line.split(" ");
 
 								if(count == words.length){
-															wordList.addAll(Arrays.asList(words));
+												wordList.addAll(Arrays.asList(words));
 								}else{
 												System.out.println("Word count does not match numbr of words in sentance DEBUG");
 								}
