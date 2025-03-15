@@ -9,7 +9,7 @@ package BrwnReclu$3;
 public class BrownRecluse{
 
   public static void main (String [] args){
-    				CODEParse Parser = new CODEParse();
+    			PageID Parser = new PageID();
 					ArrayList<String> result= Parser.CODEParse(4, "This is a test");
 
 					for (String word : result){
