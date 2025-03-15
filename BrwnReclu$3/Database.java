@@ -3,6 +3,9 @@
   Database for the BrwnResluse Program
 */
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 package BrownRelu$3;
 
 public class Database extends BrownRecluse{
