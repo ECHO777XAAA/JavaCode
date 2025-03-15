@@ -15,7 +15,7 @@ public class PageID extends BrownRecluse{
 						//identfies the code as HTML XML OR XHTML
 			}
 			
-			public static String Crawler(){.   //take HTML FILE as .htmlfile
+			public static String Crawler(){  //take HTML FILE as .htmlfile
 				//this method takes an html file and outputs each word
 				//method counts the number of words in the file
 			}
