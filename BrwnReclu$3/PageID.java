@@ -9,7 +9,7 @@
 
 Package BrwnReclu$3;
 
-public class PageID{
+public class PageID extends BrownRecluse{
 			
 			public static String Crawler(//INPUT HTML FILE){
 				//this method takes an html file and outputs each word
