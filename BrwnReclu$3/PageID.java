@@ -9,6 +9,9 @@
 
 Package BrwnReclu$3;
 
+import java.util.Arraylist:
+import java.util.Arrays;
+
 public class PageID extends BrownRecluse{
 
 			public static String PageID(){
@@ -20,7 +23,17 @@ public class PageID extends BrownRecluse{
 				//method counts the number of words in the file
 			}
 			
-			public static ArrayList<String> URLparse(String Word,int count){
-				//this method takes a word and concatanates them into an arraylist 
+			public static ArrayList<String> CODEParse(int count,Sting Line){
+								//this method takes a word and concatanates them into an arraylist 
+								ArrayList<String> wordList = new Arraylist<>();
+								String[] words = Line.split(" ");
+
+								if(count == words.length){
+															wordList.addAll(Arrays.asList(words));
+								}else{
+												System.out.println("Word count does not match numbr of words in sentance DEBUG");
+								}
+								return wordList;
+						}
 			}
 }
